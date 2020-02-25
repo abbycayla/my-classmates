@@ -11,8 +11,10 @@
             name: 'anton',
           }">Antons Screen</router-link>
           </li>
+           <li><router-link v-bind:to="'/liv'">liv</router-link></li>
       </ul>
   </nav>
+
 </template>
 
 <style scoped>
