@@ -1,0 +1,143 @@
+<template>
+  <div class="screen">
+    <div class="radiogroup">
+      <div class="wrapper">
+        <input class="state" type="radio" name="app" id="a" value="a" />
+        <label class="label" for="a">
+          <div class="indicator"></div>
+          <span class="text">a) close</span>
+        </label>
+      </div>
+      <div class="wrapper">
+        <input class="state" type="radio" name="app" id="b" value="b" />
+        <label class="label" for="b">
+          <div class="indicator"></div>
+          <span class="text">b) remove</span>
+        </label>
+      </div>
+      <div class="wrapper">
+        <input class="state" type="radio" name="app" id="c" value="c" />
+        <label class="label" for="c">
+          <div class="indicator"></div>
+          <span class="text">c) delete</span>
+        </label>
+      </div>
+      <div class="wrapper">
+        <input class="state" type="radio" name="app" id="d" value="d" />
+        <label class="label" for="d">
+          <div class="indicator"></div>
+          <span class="text">d) all of the above</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecf0f3;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+.screen{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: #e4e8ea;
+    padding: 100px
+}
+.radiogroup {
+  padding: 48px 64px;
+  border-radius: 16px;
+  background: #ecf0f3;
+  box-shadow: 4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
+}
+
+.wrapper {
+  margin: 8px 0;
+}
+
+.state {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 1e-5;
+  pointer-events: none;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: #394a56;
+}
+
+.text {
+  margin-left: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s linear, transform 0.2s ease-out;
+}
+
+.indicator {
+  position: relative;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+  overflow: hidden;
+}
+
+.indicator::before,
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+}
+
+.indicator::before {
+  box-shadow: -4px -2px 4px 0px #d1d9e6, 4px 2px 8px 0px #fff;
+}
+
+.indicator::after {
+  background-color: #ecf0f3;
+  box-shadow: -4px -2px 4px 0px #fff, 4px 2px 8px 0px #d1d9e6;
+  transform: scale3d(1, 1, 1);
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.state:checked ~ .label .indicator::after {
+  transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
+  opacity: 0;
+}
+
+.state:focus ~ .label .text {
+  transform: translate3d(8px, 0, 0);
+  opacity: 1;
+}
+
+.label:hover .text {
+  opacity: 1;
+}
+</style>

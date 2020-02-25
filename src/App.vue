@@ -10,14 +10,23 @@
 
 </template>
 
+
+
+
+
 <script>
-    import Header from './components/header/Header.vue'
+import Header from "./components/header/Header"
 
- export default {
-  name: "App",
-  components: {
-   Header
-  }
-};
+export default {
+    name: "App",
+    components: {
+        Header
+    }
 
+}
 </script>
+
+<style>
+
+</style>
+
