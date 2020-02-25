@@ -10,12 +10,18 @@
 
 </template>
 <script>
-import Header from './components/header/Header';
+import Header from "./components/header/Header"
 
 export default {
-    name: "app",
-    components:{
+    name: "App",
+    components: {
         Header
     }
-};
+
+}
 </script>
+
+<style>
+
+</style>
+
