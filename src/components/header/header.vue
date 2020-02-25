@@ -6,6 +6,7 @@
             name: 'home',
           }">Home</router-link>
           </li>
+          <li><router-link v-bind:to="'/amber'">Amber</router-link></li>
           <li>
         <router-link :to="{
             name: 'anton',
